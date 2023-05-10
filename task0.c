@@ -17,12 +17,7 @@ void push(stack_t **stack, unsigned int line_number)
 		{
 			if ((valor[i] >= 48 && valor[i] <= 57) || valor[i] == '-')
 			{
-				nuevo->n = atoi(valor);
-				nuevo->prev = NULL;
-				nuevo->next = *stack;
-				if (*stack)
-					(*stack)->prev = nuevo;
-				*stack = nuevo;
+				continue;
 			}
 			else
 			{
@@ -41,6 +36,12 @@ void push(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
+	nuevo->n = atoi(valor);	
+	nuevo->prev = NULL;
+	nuevo->next = *stack;
+	if (*stack)
+		(*stack)->prev = nuevo;
+	*stack = nuevo;
 }
 
 /**
