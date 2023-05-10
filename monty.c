@@ -1,4 +1,4 @@
-#include "manty.h"
+#include "monty.h"
 /**
  * main - funcion principal
  * @argc: cantidad de argumentos

@@ -32,11 +32,7 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-#define instruction_t instruction[] { \
-		{"push", push},\
-		{"pall", pall},\
-		{NULL, NULL} \
-};
+
 void error_de_uso(void);
 void error_archivo(char *argv);
 void stack_libre(stack_t *stack);
