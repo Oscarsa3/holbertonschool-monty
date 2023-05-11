@@ -39,6 +39,6 @@ int main(int argc, char **argv)
 		i = 0;
 	}
 	fclose(file);
-	free(stack);
+	free_stack(stack);
 	return (EXIT_SUCCESS);
 }
