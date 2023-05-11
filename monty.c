@@ -9,14 +9,14 @@ int main(int argc, char **argv)
 {
 	stack_t *stack = NULL;
 	int i = 0, line_number = 0;
-	char buffer[1000], *opcode;
+	char buffer[50], *opcode;
 	FILE *file = fopen(argv[1], "r");
 
 	if (argc != 2)
 		error_de_uso();
 	if (file == NULL)
 		error_archivo(argv[1]);
-	while (fgets(buffer, 1000, file))
+	while (fgets(buffer, 50, file))
 	{
 		line_number++;
 		opcode = strtok(buffer, " \n");
@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 		}
 		i = 0;
 	}
-	/*free(buffer);*/
 	fclose(file);
+	free(stack);
 	return (EXIT_SUCCESS);
 }

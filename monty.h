@@ -35,8 +35,9 @@ typedef struct instruction_s
 
 void error_de_uso(void);
 void error_archivo(char *argv);
-void stack_libre(stack_t *stack);
+void free_stack(stack_t *stack);
 extern instruction_t instructions[];
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 #endif /*manty.h*/
